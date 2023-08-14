@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Button, Container, Modal } from 'react-bootstrap';
+import { Card, Button, Container, Modal, Image } from 'react-bootstrap';
 import ClientSignup from '../clientsignup/ClientSignup';
 import FreelancerSignup from '../freelancersignup/FreelancerSignup';
 import Logo from '../../images/logo.png'
@@ -29,11 +29,14 @@ function Signup() {
 
 
                     <div className='text-center mb-5'>
-                        <img
-                            src={Logo}
-                            alt='Logo'
-                            style={{width: 200}}
+                    <Link to='/'>
+                        <Image
+                        src={Logo}
+                        alt='Logo'
+                        style={{width: 200}}
+                        fluid
                         />
+                    </Link>
 
                     </div>
 
