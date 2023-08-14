@@ -22,12 +22,6 @@ const users = [
     password: "Welcome",
     isAdmin: false,
   },
-  {
-    id: 3,
-    email: "admin@email",
-    password: 'admin',
-    isAdmin: true,
-  },
 ];
 
 const generateAccessToken = (user) => {
@@ -35,17 +29,11 @@ const generateAccessToken = (user) => {
 }
 
 app.post('/api/client-signup', (req, res) => {
-
   const { FIRSTNAME, LASTNAME, EMAIL, PASSWORD } = req.body;
-
-
   const checkUser = users.some((user) => {
     return user.email === EMAIL
   })
-
-
   if (checkUser) {
-
     res.status(408).json({ success: false, message: 'Email already exist' });
   } else {
     const newUser = {
@@ -53,11 +41,35 @@ app.post('/api/client-signup', (req, res) => {
       firstName: FIRSTNAME,
       lastName: LASTNAME,
       email: EMAIL,
-      password: PASSWORD
+      password: PASSWORD,
+      isClient: true
     };
     users.push(newUser);
-    res.json({ success: true, message: 'Sign-up successful' });
+    res.json({ success: true, message: 'Sign up successful', email: newUser.email, isClient: newUser.isClient });
     console.log(users)
+  }
+})
+
+app.post('/api/freelancer-signup', (req, res) => {
+  const { FIRSTNAME, LASTNAME, EMAIL, PASSWORD, } = req.body;
+
+  const checkUser = users.some((user) => {
+    return user.email === EMAIL
+  })
+
+  if (checkUser) {
+    res.status(408).json({ success: false, message: 'Email already exist' });
+  } else {
+    const newUser = {
+      id: users.length + 1,
+      firstName: FIRSTNAME,
+      lastName: LASTNAME,
+      email: EMAIL,
+      password: PASSWORD,
+      isFreelancer: true
+    };
+    users.push(newUser);
+    res.json({ success: true, message: 'Sign up succesful', email: newUser.email, isFreelancer: newUser.isFreelancer })
   }
 })
 
@@ -75,7 +87,6 @@ app.post('/api/login', (req, res) => {
 const verify = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
-
   if (authHeader) {
     const token = authHeader.split(" ")[1];
 
@@ -88,7 +99,6 @@ const verify = (req, res, next) => {
     }
   }
 }
-
 
 app.listen(7001, () => {
   console.log('Server is running on port 7001');

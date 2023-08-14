@@ -1,4 +1,4 @@
-import {Nav, Navbar, Container, Button} from 'react-bootstrap'
+import {Nav, Navbar, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
 const LandingNavbar = () => {

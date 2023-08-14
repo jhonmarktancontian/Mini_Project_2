@@ -29,6 +29,7 @@ const Login = () => {
         setMessage(data.message);
         localStorage.setItem('token', data.accessToken);
         navigate('/dashboard');
+        console.log(data);
       } else {
         setMessage(data.message);
       }

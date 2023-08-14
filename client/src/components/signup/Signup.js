@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Button, Container, Modal } from 'react-bootstrap';
 import ClientSignup from '../clientsignup/ClientSignup';
+import FreelancerSignup from '../freelancersignup/FreelancerSignup';
 import { Link } from 'react-router-dom';
 
 function Signup() {
@@ -91,7 +92,6 @@ function Signup() {
                 </div>
             </div>
 
- 
             <Modal 
             show={showSignupModal} 
             onHide={handleCloseModal} 
@@ -108,7 +108,7 @@ function Signup() {
 
                 <Modal.Body className='p-4 px-md-5'>
                     {
-                        selectedOption === 'client' ? (<ClientSignup />) : ''
+                        selectedOption === 'client' ? (<ClientSignup />) : (<FreelancerSignup/>)
                     }
                 </Modal.Body>
               

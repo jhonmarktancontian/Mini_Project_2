@@ -1,27 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Form } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const ClientSignup = (props) => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
-  const [Email, setEmail] = useState('');
-  const [Password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [confirmpassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    setFirstname('');
-    setLastname('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
-  }, [props.show])
 
   const handleSubmission = async (e) => {
     e.preventDefault();
@@ -32,8 +24,8 @@ const ClientSignup = (props) => {
       body: JSON.stringify({
         FIRSTNAME: firstname,
         LASTNAME: lastname,
-        EMAIL: Email,
-        PASSWORD: Password,
+        EMAIL: email,
+        PASSWORD: password,
       }),
     };
 
@@ -44,7 +36,7 @@ const ClientSignup = (props) => {
 
       if (fetchResult.success) {
         console.log(fetchResult.message);
-        navigate('/login')
+        navigate('/login');
       } else {
         setMessage(fetchResult.message);
       }
@@ -56,7 +48,6 @@ const ClientSignup = (props) => {
       }
     } finally {
       setIsLoading(false);
-
     }
   };
 
@@ -93,7 +84,7 @@ const ClientSignup = (props) => {
           className='shadow-none'
           type="email"
           placeholder="Email Address"
-          value={Email}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </Form.Group>
@@ -104,7 +95,7 @@ const ClientSignup = (props) => {
           className='shadow-none'
           type="password"
           placeholder="Password"
-          value={Password}
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
@@ -123,7 +114,7 @@ const ClientSignup = (props) => {
       <Form.Group className='mb-4'>
         <small className='d-flex gap-2'>
           <Form.Check type='checkbox'></Form.Check>
-          <Form.Label>I agree to the <Link to-="" className='text-decoration-none'>Terms of Use</Link> & <Link to-=""  className='text-decoration-none'>Privacy Policy.</Link></Form.Label>
+          <Form.Label>I agree to the <Link to-="" className='text-decoration-none'>Terms of Use</Link> & <Link to-="" className='text-decoration-none'>Privacy Policy.</Link></Form.Label>
         </small>
       </Form.Group>
 
