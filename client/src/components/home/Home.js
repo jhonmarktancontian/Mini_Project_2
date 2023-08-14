@@ -31,7 +31,7 @@ const Home = () => {
                 <div className="overlay">
                     <Card className="overlay-card text-center border-dark-2 card-color">
                     <Card.Body>
-                        <span><Card.Title>Get anything done from <h5>{services}</h5></Card.Title></span>
+                        <span><Card.Title className='fs-2'>Get anything done from <h5 className='fs-2'>{services}</h5></Card.Title></span>
                         <Card.Text style={{color: '#00308F'}}>—</Card.Text>
                         <Card.Subtitle></Card.Subtitle>
                         <InputGroup>
@@ -39,7 +39,7 @@ const Home = () => {
                             <Button variant='success'>Search</Button>
                         </InputGroup>
                         <Card.Text></Card.Text>
-                        <Card.Text>Popular</Card.Text>
+                        <Card.Text className='fs-10'>Popular</Card.Text>
                         <div className='scrollable'>
                         <Stack direction="horizontal" gap={2}>
                                 <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Art Commission</Link></Badge>  
@@ -74,7 +74,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>Services Categ Holder</Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 250}} fluid rounded/>
+                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
                                 <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
                             </Card>
@@ -85,7 +85,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>Services Categ Holder</Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 250}} fluid rounded/>
+                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
                                 <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
                             </Card>
@@ -96,7 +96,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>Services Categ Holder</Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 250}} fluid rounded/>
+                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
                                 <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
                             </Card>
@@ -107,7 +107,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>Services Categ Holder</Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 250}} fluid rounded/>
+                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
                                 <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
                             </Card>
@@ -118,7 +118,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>Services Categ Holder</Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 250}} fluid rounded/>
+                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
                                 <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
                             </Card>
@@ -129,7 +129,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>Services Categ Holder</Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 250}} fluid rounded/>
+                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
                                 <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
                             </Card>

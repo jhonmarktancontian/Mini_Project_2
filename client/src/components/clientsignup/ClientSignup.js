@@ -118,7 +118,7 @@ const ClientSignup = (props) => {
         </small>
       </Form.Group>
 
-      <Button type='submit' disabled={isLoading}>Sign up</Button>
+      <Button variant='success' type='submit' disabled={isLoading}>Sign up</Button>
 
     </Form>
   );

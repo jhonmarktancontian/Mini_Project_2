@@ -32,6 +32,7 @@ function Signup() {
                         <img
                             src={Logo}
                             alt='Logo'
+                            style={{width: 200}}
                         />
 
                     </div>
@@ -42,7 +43,7 @@ function Signup() {
 
                     <div className="row d-flex align-items-center justify-content-center px-2 mt-4 mt-md-5 gy-3">
                         <Card
-                            className={`col-md-3  mx-4 mb-3 ${selectedOption === 'client' ? 'bg-info' : ''}`}
+                            className={`col-md-3  mx-4 mb-3 ${selectedOption === 'client' ? 'bg-success' : ''}`}
                             style={{ minHeight: '20vh' }}
                             onClick={() => handleOptionSelect('client')}
                         >
@@ -55,7 +56,7 @@ function Signup() {
                         </Card>
 
                         <Card
-                            className={`col-md-3 mx-4 mb-3 ${selectedOption === 'freelancer' ? 'bg-info' : ''}`}
+                            className={`col-md-3 mx-4 mb-3 ${selectedOption === 'freelancer' ? 'bg-success' : ''}`}
                             style={{ minHeight: '20vh' }}
                             onClick={() => handleOptionSelect('freelancer')}
                         >
@@ -68,7 +69,7 @@ function Signup() {
 
                     <Button
                         className="col-12 col-md-4 col-lg-3 py-2 mt-4 mt-md-5"
-                        variant="primary" onClick={handleSignupButton}
+                        variant="success" onClick={handleSignupButton}
                         disabled={!selectedOption}
                         style={{ fontSize: '15px', borderRadius: '20px' }}>
                         {selectedOption ? (
