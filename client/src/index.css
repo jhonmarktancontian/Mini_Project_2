@@ -1,9 +1,21 @@
+<<<<<<< HEAD
+=======
+@font-face {
+  font-family: Poppins;
+  src: url(../src/assets/fonts/Poppins-Medium.ttf);
+}
+
+>>>>>>> 086af5dfbcc415d5c7508f787da1dfc9eb21e659
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+<<<<<<< HEAD
   font-family: 'Montserrat', sans-serif !important;
+=======
+  font-family: 'Poppins', sans-serif !important;
+>>>>>>> 086af5dfbcc415d5c7508f787da1dfc9eb21e659
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
