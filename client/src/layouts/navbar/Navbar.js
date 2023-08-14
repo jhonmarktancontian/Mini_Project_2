@@ -1,5 +1,5 @@
 import {Nav, Navbar, Container, Button, Image} from 'react-bootstrap'
-import Logo from './logo.png'
+import Logo from '../../images/logo.png'
 import { Link } from 'react-router-dom';
 
 const LandingNavbar = () => {
@@ -19,7 +19,7 @@ const LandingNavbar = () => {
                             </Nav>
                             <Nav>
                                 <Nav.Link as={Link} to="/login" >Log in / Sign up</Nav.Link>
-                                <Button variant='success'>Become a Taskmaster</Button>
+                                <Button variant='success' className='mx-3'>Become a Taskmaster</Button>
                             </Nav>
                         </Navbar.Collapse>
                 </Container> 

@@ -10,6 +10,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import ClientSignup from './components/clientsignup/ClientSignup';
 import FreelancerSignup from './components/freelancersignup/FreelancerSignup';
 import Signup from './components/signup/Signup';
+
 function App() {
 
   const HandleLogout = () => { 
