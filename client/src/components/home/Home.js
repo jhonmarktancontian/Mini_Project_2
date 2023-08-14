@@ -1,17 +1,10 @@
 import { Stack, Badge, Button, InputGroup, Form, Card, Image } from "react-bootstrap";
 import './Home.css';
-<<<<<<< HEAD
-import Banner from './woman.jpg';
-import { useEffect, useState } from "react";
-import {Link} from 'react-router-dom'
-
-=======
 import Banner from '../../assets/images/woman.jpg';
 import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom'
 
 
->>>>>>> 086af5dfbcc415d5c7508f787da1dfc9eb21e659
 const Home = () => {
     const [services, setServices] = useState('');
     
@@ -69,8 +62,4 @@ const Home = () => {
     );
 }
 
-<<<<<<< HEAD
 export default Home;
-=======
-export default Home;
->>>>>>> 086af5dfbcc415d5c7508f787da1dfc9eb21e659

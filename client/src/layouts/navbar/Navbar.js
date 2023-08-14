@@ -1,4 +1,5 @@
-import {Nav, Navbar, Container } from 'react-bootstrap'
+import {Nav, Navbar, Container, Button, Image} from 'react-bootstrap'
+import Logo from './logo.png'
 import { Link } from 'react-router-dom';
 
 const LandingNavbar = () => {
@@ -6,17 +7,19 @@ const LandingNavbar = () => {
         <div className="LandingNavbar">
             <Navbar expand="lg" className="test bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">LOGO</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/">
+                        <Image src={Logo} style={{width: 180}} fluid></Image>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="m-auto d-flex gap-md-5">
+                            <Nav className="m-auto d-flex gap-lg-5">
                                 <Nav.Link as={Link} to="/about">About</Nav.Link>
-                                <Nav.Link as={Link} to="/services">Services</Nav.Link>
-                                <Nav.Link as={Link} to="/services">Help</Nav.Link>
+                                <Nav.Link as={Link} to="/services" >Services</Nav.Link>
+                                <Nav.Link as={Link} to="/services" >Help</Nav.Link>
                             </Nav>
-                            <Nav className='gap-md-3'>
-                                <Nav.Link as={Link} to="/login">Log in</Nav.Link>
-                                <Nav.Link as={Link} to="/signup" className='border custom-bg'>Sign up</Nav.Link>                                
+                            <Nav>
+                                <Nav.Link as={Link} to="/login" >Log in / Sign up</Nav.Link>
+                                <Button variant='success'>Become a Taskmaster</Button>
                             </Nav>
                         </Navbar.Collapse>
                 </Container> 
