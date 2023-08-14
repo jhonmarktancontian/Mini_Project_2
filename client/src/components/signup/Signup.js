@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button, Container, Modal } from 'react-bootstrap';
 import ClientSignup from '../clientsignup/ClientSignup';
 import FreelancerSignup from '../freelancersignup/FreelancerSignup';
+import Logo from '../../images/logo.png'
 import { Link } from 'react-router-dom';
 
 function Signup() {
@@ -29,7 +30,7 @@ function Signup() {
 
                     <div className='text-center mb-5'>
                         <img
-                            src='your_logo_url_here'
+                            src={Logo}
                             alt='Logo'
                         />
 
@@ -81,10 +82,8 @@ function Signup() {
 
                     <div className='mt-4'>
                         <span style={{fontSize: '15px'}}>
-                           
                             Already have an account?  
                             <Link to="/login" className="text-decoration-none ms-2">Log in</Link>
-                          
                         </span>
 
                     </div>
@@ -99,7 +98,7 @@ function Signup() {
             aria-labelledby="contained-modal-title-vcenter" 
             centered
             >
-               
+        
                 <Modal.Header closeButton className='px-4 px-md-5 py-md-3' style={{ border: 'none' }}>
                     <Modal.Title>
                         Signup as a {selectedOption === 'client' ? 'Client' : 'Freelancer'}
@@ -111,7 +110,7 @@ function Signup() {
                         selectedOption === 'client' ? (<ClientSignup />) : (<FreelancerSignup/>)
                     }
                 </Modal.Body>
-              
+            
             </Modal>
             
         </Container>

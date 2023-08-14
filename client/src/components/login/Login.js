@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Image } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
+import Logo from '../../images/logo.png'
 import './Login.module.css';
 
 const Login = () => {
@@ -47,9 +48,11 @@ const Login = () => {
         <div className='text-black'>
           <div className='py-md-4 mx-md-4'>
             <div className='text-center mb-5'>
-              <img
-                src='your_logo_url_here'
+              <Image
+                src={Logo}
                 alt='Logo'
+                style={{width: 200}}
+                fluid
               />
             </div>
             <Form onSubmit={login}>
@@ -81,7 +84,6 @@ const Login = () => {
           </div >
         </div >
       </div >
-
     </section >
   );
 };
