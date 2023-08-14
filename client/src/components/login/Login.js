@@ -66,7 +66,7 @@ const Login = () => {
                 <Form.Control className='shadow-none' type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
               </Form.Group>
               <div className='loginMessage mb-3'>{message}</div>
-              <Button className='gradient-btn mb-2 w-100' type='submit' disabled={isLoading}>
+              <Button variant='success' className='gradient-btn mb-2 w-100' type='submit' disabled={isLoading}>
                 {isLoading ? 'Logging in...' : 'Log in'}
               </Button>
               <div className='text-center mb-4'>

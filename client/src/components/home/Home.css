@@ -42,6 +42,7 @@
 }
 
 ::-webkit-scrollbar {
+    display: none;
     width: .3rem;
     height:.2rem;
 }
