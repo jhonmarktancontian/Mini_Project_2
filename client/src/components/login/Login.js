@@ -48,12 +48,14 @@ const Login = () => {
         <div className='text-black'>
           <div className='py-md-4 mx-md-4'>
             <div className='text-center mb-5'>
-              <Image
-                src={Logo}
-                alt='Logo'
-                style={{width: 200}}
-                fluid
-              />
+              <Link to='/'>
+                <Image
+                  src={Logo}
+                  alt='Logo'
+                  style={{width: 200}}
+                  fluid
+                />
+              </Link>
             </div>
             <Form onSubmit={login}>
               <Form.Group className='mb-3' controlId='email'>
