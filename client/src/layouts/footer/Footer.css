@@ -1,0 +1,13 @@
+.form-control:focus{
+    border-color: #1b8206 !important;
+    box-shadow: 0 0 0 0.1rem #59c759 !important;
+}
+
+.underline-on-hover{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.underline-on-hover:hover{
+    text-decoration: underline;
+}
