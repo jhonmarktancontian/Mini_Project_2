@@ -17,7 +17,7 @@ const Home = () => {
         const interval = setInterval(() => {
             setServices(titleContent[currentIndex]);
             currentIndex = (currentIndex + 1) % titleContent.length;
-        }, 3000);
+        }, 1500);
 
         return () => {
             clearInterval(interval);
@@ -72,7 +72,7 @@ const Home = () => {
                         <Col lg={3} className="my-3 mb-2">
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>Services Categ Holder</Card.Title>
+                                    <Card.Title></Card.Title>
                                     <Card.Subtitle>Service details</Card.Subtitle>
                                     <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
                                 </Card.Body>
