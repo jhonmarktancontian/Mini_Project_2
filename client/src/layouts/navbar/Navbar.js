@@ -1,5 +1,5 @@
 import {Nav, Navbar, Container, Button, Image} from 'react-bootstrap'
-import Logo from '../../images/logo.png'
+import Logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom';
 
 const LandingNavbar = () => {

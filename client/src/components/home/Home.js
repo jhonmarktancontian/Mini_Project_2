@@ -1,17 +1,27 @@
 import { Stack, Badge, Button, InputGroup, Form, Card, Image, Container, Row, Col } from "react-bootstrap";
 import './Home.css';
-import Green from '../../images/green.jpg'
+import WebD from '../../assets/icons/web-design.png'
+import Photo from '../../assets/icons/photo.png'
+import Writing from '../../assets/icons/writing.png'
+import Marketing from '../../assets/icons/marketing.png'
+import Film from '../../assets/icons/film.png'
+import Music from '../../assets/icons/music.png'
+import Computer from '../../assets/icons/programming.png'
+import Customer from '../../assets/icons/customer.png'
 
 import Banner from '../../assets/images/woman.jpg';
+import Green from '../../assets/images/green.png';
 import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom'
 
 
 const Home = () => {
     const [services, setServices] = useState('');
+    const [tContent, setContent] = useState('')
     
     useEffect(() => {
-        const titleContent = ['Graphics and Designs', 'Digital Marketing', 'Writing and Translation', 'Photography', 'Video & Animation', 'Music and Audio', 'Programming & Tech'];
+        const titleContent = ['Graphics and Designs', 'Photography', 'Writing and Translation', 'Digital Marketing', 'Video Editing', 'Music and Audio', 'Programming & Tech', 'Customer Support'];
+        setContent(titleContent)
         let currentIndex = 0;
 
         const interval = setInterval(() => {
@@ -42,17 +52,17 @@ const Home = () => {
                         <Card.Text className='fs-10'>Popular</Card.Text>
                         <div className='scrollable'>
                         <Stack direction="horizontal" gap={2}>
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Art Commission</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Account Boost</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Gardening</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Helper</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Car Rental</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Delivery Guy</Link></Badge>
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Witch Doctor</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Logistics</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Food Service</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Lumber</Link></Badge>  
-                                <Badge bg='success'><Link as={Link} to="/services" className='text-decoration-none text-light'>Plumbing</Link></Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Art Commission</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Account Boost</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Gardening</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Helper</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Car Rental</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Delivery Guy</Badge>
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Witch Doctor</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Logistics</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Food Service</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Lumber</Badge>  
+                                <Badge bg='success' as={Link} to='/services' className='text-decoration-none'>Plumbing</Badge>  
                         </Stack>
                         </div>
                     </Card.Body>
@@ -61,80 +71,81 @@ const Home = () => {
                 <Image src={Banner} alt="Image" className="background-image" />
             </div>
 
-            <Container className="my-4" fluid>
+            <Container className='my-5' fluid>
+                <Row>
+                    <Col className='text-center'>
+                        <Image src={Green} style={{width: 450, height: 500}} fluid rounded/>
+                    </Col>
+
+                    <Col>
+                        <header className='fs-2'>Get Taskmasters to help you!</header>
+                        <p className='fs-10'>Hire professionals to assist in your work.</p>
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container className="my-5">
                     <p className='fs-2'>What you need, is what you get</p>
                     <span>
                         Need help with something?
                         <Link to='/services' className='text-decoration-none fs-10'> Post a job request</Link>
                     </span>
-                    <Row className="my-auto mt-4 scrollable">
-                    <Stack direction="horizontal" gap={2}>
+                    <Row className="my-auto">
                         <Col lg={3} className="my-3 mb-2">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title></Card.Title>
-                                    <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
-                                </Card.Body>
-                                <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
-                            </Card>
+                            <figure className='text-center pb-3'>
+                                <Image src={WebD} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[0]}</figcaption>
+                            </figure>
                         </Col>
 
                         <Col lg={3} className="my-3 mb-2">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Services Categ Holder</Card.Title>
-                                    <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
-                                </Card.Body>
-                                <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
-                            </Card>
+                            <figure className='text-center pb-3'>
+                                <Image src={Photo} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[1]}</figcaption>
+                            </figure>
                         </Col>
 
                         <Col lg={3} className="my-3 mb-2">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Services Categ Holder</Card.Title>
-                                    <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
-                                </Card.Body>
-                                <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
-                            </Card>
+                            <figure className='text-center pb-3'>
+                                <Image src={Writing} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[2]}</figcaption>
+                            </figure>
                         </Col>
 
                         <Col lg={3} className="my-3 mb-2">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Services Categ Holder</Card.Title>
-                                    <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
-                                </Card.Body>
-                                <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
-                            </Card>
+                            <figure className='text-center pb-3'>
+                                <Image src={Marketing} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[3]}</figcaption>
+                            </figure>
                         </Col>
 
                         <Col lg={3} className="my-3 mb-2">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Services Categ Holder</Card.Title>
-                                    <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
-                                </Card.Body>
-                                <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
-                            </Card>
+                            <figure className='text-center pb-3'>
+                                <Image src={Film} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[4]}</figcaption>
+                            </figure>
                         </Col>
 
                         <Col lg={3} className="my-3 mb-2">
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Services Categ Holder</Card.Title>
-                                    <Card.Subtitle>Service details</Card.Subtitle>
-                                    <Image src={Green} alt="Image" className="mt-4" style={{height: 300, width: 300}} fluid rounded/>
-                                </Card.Body>
-                                <Button variant="success" className="mx-3 mb-2" as={Link} to='/services'>Learn More</Button>
-                            </Card>
+                            <figure className='text-center pb-3'>
+                                <Image src={Music} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[5]}</figcaption>
+                            </figure>
                         </Col>
-                        </Stack>
+
+                        <Col lg={3} className="my-3 mb-2">
+                            <figure className='text-center pb-3'>
+                                <Image src={Computer} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[6]}</figcaption>
+                            </figure>
+                        </Col>
+
+                        <Col lg={3} className="my-3 mb-2">
+                            <figure className='text-center pb-3'>
+                                <Image src={Customer} alt="Image" className="mt-4" style={{width: 80}} fluid rounded/>
+                                <figcaption className='mt-2'>{tContent[7]}</figcaption>
+                            </figure>
+                        </Col>
                     </Row>
             </Container>
         </div>

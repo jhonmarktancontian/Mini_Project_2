@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button, Container, Modal, Image } from 'react-bootstrap';
 import ClientSignup from '../clientsignup/ClientSignup';
 import FreelancerSignup from '../freelancersignup/FreelancerSignup';
-import Logo from '../../images/logo.png'
+import Logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom';
 
 function Signup() {
