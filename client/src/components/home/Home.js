@@ -80,6 +80,20 @@ const Home = () => {
                     <Col>
                         <header className='fs-2'>Get Taskmasters to help you!</header>
                         <p className='fs-10'>Hire professionals to assist in your work.</p>
+                        <p className="fs-10">
+                            Get work done with the assistance of professionals from different
+                            fields and make your job more easier. Sign-up now to start making 
+                            your life more easier.
+                        </p>
+                        <p>
+                        Lorem ipsum Lorem ipsum 
+                        Lorem ipsum Lorem ipsum 
+                        Lorem ipsum Lorem ipsum 
+                        Lorem ipsum Lorem ipsum 
+                        Lorem ipsum Lorem ipsum 
+                        Lorem ipsum Lorem ipsum 
+                        Lorem ipsum Lorem ipsum 
+                        </p>
                     </Col>
                 </Row>
             </Container>
