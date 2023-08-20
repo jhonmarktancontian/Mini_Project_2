@@ -105,7 +105,7 @@ const Signup = () => {
                 </small>
             </Form.Group>
 
-            <Button variant='success' type='submit' disabled={isLoading}>Sign up</Button>
+            <Button type='submit' disabled={isLoading}>Sign up</Button>
 
         </Form>
     )
