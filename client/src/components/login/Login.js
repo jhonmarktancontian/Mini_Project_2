@@ -26,17 +26,19 @@ const Login = () => {
 
       const data = await response.json();
 
-      if (data.code === 'Admin'){
-        navigate('/home')
-      }
-      else{
-        console.log('Error has occured.')
-      }
+      // if (data.code === 'Admin'){
+      //   navigate('/home')
+      // }
+      // else{
+      //   console.log('Error has occured.')
+      // }
+
+      console.log(data.email)
 
       if (data.success) {
         setMessage(data.message);
         localStorage.setItem('token', data.accessToken);
-        navigate('/dashboard');
+        navigate('/');
         console.log(data);
       } else {
         setMessage(data.message);
