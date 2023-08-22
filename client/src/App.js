@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import ClientSignup from './components/clientsignup/ClientSignup';
 import FreelancerSignup from './components/freelancersignup/FreelancerSignup';
 import Signup from './components/signup/Signup';
+import Profile from './components/profile/Profile';
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
           <Route path='/FreelancerSignup' element={<FreelancerSignup/>}/>
 
           <Route path="/dashboard/*" element={<PrivateRoutes />}>
-            <Route index element={<Dashboard handleLogout={HandleLogout} />} />      
+            <Route index element={<Dashboard handleLogout={HandleLogout} />} /> 
+            <Route path='profile' element={<Profile handleLogout={HandleLogout}/>}/>
           </Route>
 
         </Routes>

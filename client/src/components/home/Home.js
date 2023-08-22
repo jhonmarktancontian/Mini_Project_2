@@ -98,13 +98,13 @@ const Home = () => {
                 </StyledRow>
             </StyledContainer>
 
-            <Container className='my-5' fluid>
+            <Container className="my-5" fluid>
                 <Row>
-                    <Col className='text-center'>
-                        <Image src={Green} style={{ width: 450, height: 500 }} fluid rounded />
+                    <Col sm={6} className='text-center'>
+                        <Image src={Green} style={{width: 450, height: 500}} fluid rounded/>
                     </Col>
 
-                    <Col>
+                    <Col sm={6}>
                         <header className='fs-2'>Get Taskmasters to help you!</header>
                         <p className='fs-10'>Hire professionals to assist in your work.</p>
                         <p className="fs-10">
