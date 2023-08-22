@@ -2,8 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useState } from 'react';
 import { Button, Form, Image } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
-import Logo from '../../assets/images/logo.png'
 import './Login.module.css';
+import logo from '../../assets/images/logo.png'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -59,9 +59,9 @@ const Login = () => {
             <div className='text-center mb-5'>
               <Link to='/'>
                 <Image
-                  src={Logo}
+                  src={logo}
                   alt='Logo'
-                  style={{width: 200}}
+                  style={{ width: 200 }}
                   fluid
                 />
               </Link>
@@ -77,7 +77,7 @@ const Login = () => {
                 <Form.Control className='shadow-none' type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
               </Form.Group>
               <div className='loginMessage mb-3'>{message}</div>
-              <Button variant='success' className='gradient-btn mb-2 w-100' type='submit' disabled={isLoading}>
+              <Button className='gradient-btn mb-2 w-100' type='submit' disabled={isLoading}>
                 {isLoading ? 'Logging in...' : 'Log in'}
               </Button>
               <div className='text-center mb-4'>
@@ -95,6 +95,7 @@ const Login = () => {
           </div >
         </div >
       </div >
+
     </section >
   );
 };

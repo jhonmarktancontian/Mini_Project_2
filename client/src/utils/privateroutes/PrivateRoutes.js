@@ -4,7 +4,6 @@ const PrivateRoutes = () => {
 
     const isLoginSuccess = !!localStorage.getItem('token');
     
-
     return(
         isLoginSuccess ? <Outlet/> : <Navigate to ="/login"/>
     )
