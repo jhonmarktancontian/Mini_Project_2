@@ -13,7 +13,7 @@ const users = [
   {
     id: 1,
     email: "admin@test",
-    password: "admin",
+    password: "Welcome",
     isAdmin: true,
   },
   {
@@ -76,7 +76,6 @@ app.post('/api/freelancer-signup', (req, res) => {
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   const user = users.find((user) => user.email === email && user.password === password);
-
   if (user) {
     accessToken = generateAccessToken(user);
     res.json({ success: true, message: 'Login successful', accessToken: accessToken, user });

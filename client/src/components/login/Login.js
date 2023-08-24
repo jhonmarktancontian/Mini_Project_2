@@ -26,19 +26,10 @@ const Login = () => {
 
       const data = await response.json();
 
-      // if (data.code === 'Admin'){
-      //   navigate('/home')
-      // }
-      // else{
-      //   console.log('Error has occured.')
-      // }
-
-      console.log(data.email)
-
       if (data.success) {
         setMessage(data.message);
         localStorage.setItem('token', data.accessToken);
-        navigate('/');
+        navigate('/ ');
         console.log(data);
       } else {
         setMessage(data.message);
@@ -89,8 +80,6 @@ const Login = () => {
                   <Link to="/signup" className="text-decoration-none ms-2">Sign up</Link>
                 </span>
               </div>
-
-
             </Form>
           </div >
         </div >

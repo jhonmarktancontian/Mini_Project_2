@@ -1,18 +1,17 @@
-
 import {Nav, Navbar, Container, Image, NavbarBrand, NavDropdown} from 'react-bootstrap'
-import Logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.png'
 import User from '../../assets/icons/user.png'
 import { Link, useNavigate } from 'react-router-dom';
 
-const LandingNavbar = ({logout}) => {
+    const LandingNavbar = ({logout}) => {
 
-    const isLoginSuccess = !!localStorage.getItem('token')
-    const navigate = useNavigate()
-
-    const exitSession = () => {
-        logout();
-        navigate('/')
-    }
+        const isLoginSuccess = !!localStorage.getItem('token')
+        const navigate = useNavigate()
+    
+        const exitSession = () => {
+            logout();
+            navigate('/')
+        }
 
     return (
         <div className="LandingNavbar">
@@ -23,20 +22,23 @@ const LandingNavbar = ({logout}) => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                         <Navbar.Collapse id="basic-navbar-nav">
-
-                            <Nav className="m-auto d-flex gap-lg-5">
-                                <Nav.Link as={Link} to="/">Home</Nav.Link>
+                            <Nav className="m-auto d-flex gap-md-5">
                                 <Nav.Link as={Link} to="/about">About</Nav.Link>
-                                <Nav.Link as={Link} to="/services">Services</Nav.Link>
-                                <Nav.Link as={Link} to="/services">Help</Nav.Link>
-                            </Nav>
+                            <Nav.Link as={Link} to="/services">Services</Nav.Link>
+                            <Nav.Link as={Link} to="/services">Help</Nav.Link>
+                        </Nav>
+                        <Nav className='gap-md-1'>
+                            {!isLoginSuccess ? (
+                                <>
+                                    <Nav.Link as={Link} to="/login" className='px-3'>Login</Nav.Link>
+                                    <Nav.Link as={Link} to="/signup" className='border rounded-1 bg-success px-3'>Sign up</Nav.Link>
+                                </>
+                            ) : null}
+                        </Nav>
 
-                            <Nav>
-                                <Nav.Link as={Link} to="/login" >Log in / Sign up</Nav.Link>
-                            </Nav>
-                            <Nav>
-                                {isLoginSuccess ? (
-                                    <NavbarBrand className='mx-5'>
+                        <Nav>
+                            {isLoginSuccess ? (
+                                <NavbarBrand className='mx-5'>
                                         <NavDropdown title={
                                             <Image src={User} style={{width: 30}} title='Profile' fluid rounded/>
                                         } menuVariant='success'> 

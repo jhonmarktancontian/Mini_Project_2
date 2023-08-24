@@ -17,6 +17,11 @@ export const StyledInputGroup = styled(InputGroup)`
 `;
 
 export const StyledFormControl = styled(Form.Control)`
+&:focus {
+  border: none;
+}
+;
+
   &::placeholder {
 
     @media (max-width: 767px) {

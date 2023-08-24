@@ -9,7 +9,9 @@ import Dashboard from './components/dashboard/Dashboard';
 import ClientSignup from './components/clientsignup/ClientSignup';
 import FreelancerSignup from './components/freelancersignup/FreelancerSignup';
 import Signup from './components/signup/Signup';
-import Profile from './components/profile/Profile';
+import Booking from './components/booking/Booking';
+import Step1 from './components/booking/Step1';
+import Step2 from './components/booking/Step2';
 
 function App() {
 
@@ -35,10 +37,13 @@ function App() {
           <Route path='/FreelancerSignup' element={<FreelancerSignup/>}/>
 
           <Route path="/dashboard/*" element={<PrivateRoutes />}>
-            <Route index element={<Dashboard handleLogout={HandleLogout} />} /> 
-            <Route path='profile' element={<Profile handleLogout={HandleLogout}/>}/>
+            <Route index element={<Dashboard handleLogout={HandleLogout} />} />      
           </Route>
 
+          <Route path="/book/*" element={<Booking/>}>
+            <Route index element={<Step1/>}/>
+            <Route path="step2" element={<Step2/>}/>
+          </Route>
         </Routes>
     </div>
   );

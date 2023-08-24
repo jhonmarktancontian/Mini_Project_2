@@ -9,7 +9,7 @@ import Computer from '../../assets/icons/programming.png';
 import Customer from '../../assets/icons/customer.png';
 import Green from '../../assets/images/green.png';
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { StyledRow, StyledStack, StyledCard, StyledBadge, StyledContainer } from './Home.style';
 import { StyledInputGroup, StyledFormControl } from "../styles/InputGroup.style";
 import { ServicesData } from '../../data/ServicesData';
@@ -17,7 +17,9 @@ import { ServicesData } from '../../data/ServicesData';
 const Home = () => {
     const [serviceItem, setServiceItem] = useState('')
     const [searchService, setSearchService] = useState('');
+    const [selectedService, setSelectedService] = useState(null);
     const [isTouched, setIsTouched] = useState(false);
+    const navigate = useNavigate();
 
     const handleTouchStart = () => {
         setIsTouched(true);
@@ -27,8 +29,12 @@ const Home = () => {
         setIsTouched(false);
     };
 
+    const handleServiceClick = (service) => {
+        navigate('/book', { selectedService: service });
+    };
+
     useEffect(() => {
-        const serviceTitles = ['Graphics and Designs', 'Photography', 'Writing and Translation', 'Digital Marketing', 'Video Editing', 'Programming and Tech'];
+        const serviceTitles = ['Graphics Design', 'Web Development', 'Content Writing', 'Digital Marketing', 'Video Editing', 'UI/UX Design', 'Virtual Assistance'];
         setServiceItem(serviceTitles[0])
         let currentIndex = 0;
 
@@ -57,39 +63,38 @@ const Home = () => {
 
                                 <Card.Text className='fs-2 mb-5'>{serviceItem}</Card.Text>
 
-                                <StyledInputGroup>
-                                    <StyledFormControl
-                                        placeholder='I need help with...'
-                                        className="rounded-0 shadow-none col-12"
-                                        value={searchService}
-                                        onChange={(e) => setSearchService(e.target.value)}
-                                        onFocus={handleTouchStart}
-                                        onBlur={handleTouchCancel}
-                                    >
-                                    </StyledFormControl>
-                                </StyledInputGroup>
+                                <div className="position-relative">
+                                    <StyledInputGroup>
+                                        <StyledFormControl
+                                            placeholder='Find services...'
+                                            className="rounded-1 shadow-none col-12 px-4 fs-5"
+                                            value={searchService}
+                                            onChange={(e) => setSearchService(e.target.value)}
+                                            onFocus={handleTouchStart}
+                                            onBlur={handleTouchCancel}
+                                        >
+                                        </StyledFormControl>
+                                    </StyledInputGroup>
 
-                                {isTouched &&
-                                    <ListGroup className="rounded-0 border">
-                                        {ServicesData.filter((item) => {
-                                            return searchService.toLowerCase() === '' ? item : item.name.toLowerCase().includes(searchService.toLowerCase());
-                                        }).map((item) => (
-                                            <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-start  border-0 list-group-item-action">
-                                                <div className="ms-2 me-auto">
-                                                    {item.name}
-                                                </div>
-                                            </ListGroup.Item>
-
-                                        ))}
-                                    </ListGroup>
-                                }
+                                    {isTouched &&
+                                        <ListGroup className="rounded-1 border-none position-absolute col-12 mt-1" style={{ maxHeight: '25vh', overflowY: 'auto', cursor:'pointer' }}>
+                                            {ServicesData.filter((item) => {
+                                                return searchService.toLowerCase() === '' ? '' : item.name.toLowerCase().includes(searchService.toLowerCase());
+                                            }).map((item) => (
+                                                <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-start border-0 list-group-item-action px-4" onClick={() => handleServiceClick(item)}>
+                                                        {item.name}
+                                                </ListGroup.Item>
+                                            ))}
+                                        </ListGroup>
+                                    }
+                                </div>
 
                                 <StyledStack direction="horizontal" gap={3} className="mt-5">
-                                    <StyledBadge as={Link} to='/services' className='text-decoration-none py-2 px-3 mb-3'>All</StyledBadge>
-                                    <StyledBadge as={Link} to='/services' className='text-decoration-none py-2 px-3 mb-3'>Home Repair</StyledBadge>
-                                    <StyledBadge as={Link} to='/services' className='text-decoration-none py-2 px-3 mb-3'>Help Moving</StyledBadge>
-                                    <StyledBadge as={Link} to='/services' className='text-decoration-none py-2 px-3 mb-3'>Errands</StyledBadge>
-                                    <StyledBadge as={Link} to='/services' className='text-decoration-none py-2 px-3 mb-3'>Landscaping</StyledBadge>
+                                    <StyledBadge as={Link} to='/services' className='text-decoration-none rounded-1 py-2 px-3 mb-3'>All</StyledBadge>
+                                    <StyledBadge as={Link} to='/services' className='text-decoration-none rounded-1 py-2 px-3 mb-3'>SEO Audits</StyledBadge>
+                                    <StyledBadge as={Link} to='/services' className='text-decoration-none rounded-1 py-2 px-3 mb-3'>Copywriting</StyledBadge>
+                                    <StyledBadge as={Link} to='/services' className='text-decoration-none rounded-1 py-2 px-3 mb-3'>Website Design</StyledBadge>
+                                    <StyledBadge as={Link} to='/services' className='text-decoration-none rounded-1 py-2 px-3 mb-3'>Data Entry</StyledBadge>
                                 </StyledStack>
                             </Card.Body>
                         </StyledCard>
@@ -98,13 +103,13 @@ const Home = () => {
                 </StyledRow>
             </StyledContainer>
 
-            <Container className="my-5" fluid>
+            <Container className='my-5' fluid>
                 <Row>
-                    <Col sm={6} className='text-center'>
-                        <Image src={Green} style={{width: 450, height: 500}} fluid rounded/>
+                    <Col className='text-center'>
+                        <Image src={Green} style={{ width: 450, height: 500 }} fluid rounded />
                     </Col>
 
-                    <Col sm={6}>
+                    <Col>
                         <header className='fs-2'>Get Taskmasters to help you!</header>
                         <p className='fs-10'>Hire professionals to assist in your work.</p>
                         <p className="fs-10">
