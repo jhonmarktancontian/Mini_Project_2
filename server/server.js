@@ -22,6 +22,18 @@ const users = [
     password: "Welcome",
     isAdmin: false,
   },
+  {
+    id: 3,
+    email: "client@test",
+    password: "Welcome",
+    isClient: true,
+  },
+  {
+    id: 4,
+    email: "freelancer@test",
+    password: "Welcome",
+    isFreelancer: true,
+  },
 ];
 
 const generateAccessToken = (user) => {
