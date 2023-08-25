@@ -1,4 +1,4 @@
-import LandingNavbar from '../navbar/Navbar';
+import LandingNavbar from '../navbar/LandingNavbar';
 import Content from '../content/Content';
 import Footer from '../footer/Footer';
 

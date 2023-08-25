@@ -12,27 +12,35 @@ app.use(express.json());
 const users = [
   {
     id: 1,
+    firstname: "John",
+    lastname: "Doe",
     email: "admin@test",
     password: "Welcome",
     isAdmin: true,
   },
   {
     id: 2,
+    firstname: "John",
+    lastname: "Doe",
     email: "staff@test",
     password: "Welcome",
     isAdmin: false,
   },
   {
     id: 3,
+    firstname: "John",
+    lastname: "Doe",
     email: "client@test",
     password: "Welcome",
-    isClient: true,
+    role: "client",
   },
   {
     id: 4,
+    firstname: "Jem",
+    lastname: "Dedicatoria",
     email: "freelancer@test",
     password: "Welcome",
-    isFreelancer: true,
+    role: "freelancer",
   },
 ];
 
@@ -50,14 +58,14 @@ app.post('/api/client-signup', (req, res) => {
   } else {
     const newUser = {
       id: users.length + 1,
-      firstName: FIRSTNAME,
-      lastName: LASTNAME,
+      firstname: FIRSTNAME,
+      lastname: LASTNAME,
       email: EMAIL,
       password: PASSWORD,
-      isClient: true
+      role: "client"
     };
     users.push(newUser);
-    res.json({ success: true, message: 'Sign up successful', email: newUser.email, isClient: newUser.isClient });
+    res.json({ success: true, message: 'Sign up successful', newUser });
     console.log(users)
   }
 })
@@ -74,14 +82,14 @@ app.post('/api/freelancer-signup', (req, res) => {
   } else {
     const newUser = {
       id: users.length + 1,
-      firstName: FIRSTNAME,
-      lastName: LASTNAME,
+      firstname: FIRSTNAME,
+      lastname: LASTNAME,
       email: EMAIL,
       password: PASSWORD,
-      isFreelancer: true
+      role: "freelancer"
     };
     users.push(newUser);
-    res.json({ success: true, message: 'Sign up succesful', email: newUser.email, isFreelancer: newUser.isFreelancer })
+    res.json({ success: true, message: 'Sign up succesful', newUser })
   }
 })
 
